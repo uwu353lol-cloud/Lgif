@@ -4,3 +4,6 @@
   align-items: center;     /* Centers vertically */
   min-height: 100vh;       /* Optional: Makes container full screen height */
 }
+body {
+  background-color: black;
+}
