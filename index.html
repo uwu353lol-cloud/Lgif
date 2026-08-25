@@ -2,23 +2,19 @@
 <html>
   <head> <link rel="stylesheet" href="style.css"> </head>
   <body>
-  <div class="video-container">
-    <video autoplay loop playsinline muted style="width:100vw; height:100vh; object-fit:contain; background:black;">
-      <source src="lando-donut.mp4" type="video/mp4">
-    </video>
-  </div>
-    <button id="soundBtn" style="position:fixed; bottom:20px; right:20px; padding:12px 20px; font-size:16px; z-index:10; cursor:pointer;">
-  🍩🥺 Tap for donuts
-</button>
+  <style>
+  body { margin: 0; background: black; }
+  video { width: 100vw; height: 100vh; object-fit: contain; display: block; }
+  #playBtn {
+    position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    font-size: 60px; background: none; border: none; color: white;
+    cursor: pointer; z-index: 10;
+  }
+</style>
 
-<script>
-  const vid = document.getElementById('vid');
-  const btn = document.getElementById('soundBtn');
-  btn.addEventListener('click', () => {
-    vid.muted = false;
-    btn.textContent = 'cutie patootie';
-    setTimeout(() => btn.remove(), 1500);
-  });
-</script>
+<video id="vid" loop playsinline style="width:100vw; height:100vh; object-fit:contain;">
+  <source src="lando-donuts.mp4" type="video/mp4">
+</video>
+<button id="playBtn" onclick="document.getElementById('vid').play(); this.remove();">▶</button>
   </body>
 </html>
