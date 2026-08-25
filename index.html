@@ -7,6 +7,17 @@
       <source src="lando-donut.mp4" type="video/mp4">
     </video>
   </div>
-    <button onclick="document.getElementById('vid').muted = false"> hear the donut! 🍩</button>
+    <script>
+  const vid = document.getElementById('vid');
+  const unmuteOnInteract = () => {
+    vid.muted = false;
+    document.removeEventListener('click', unmuteOnInteract);
+    document.removeEventListener('scroll', unmuteOnInteract);
+    document.removeEventListener('keydown', unmuteOnInteract);
+  };
+  document.addEventListener('click', unmuteOnInteract);
+  document.addEventListener('scroll', unmuteOnInteract);
+  document.addEventListener('keydown', unmuteOnInteract);
+    </script>
   </body>
 </html>
