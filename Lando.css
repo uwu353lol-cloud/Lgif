@@ -1,0 +1,6 @@
+.video-container {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;     /* Centers vertically */
+  min-height: 100vh;       /* Optional: Makes container full screen height */
+}
