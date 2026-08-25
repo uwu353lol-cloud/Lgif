@@ -7,17 +7,18 @@
       <source src="lando-donut.mp4" type="video/mp4">
     </video>
   </div>
-    <script>
+    <button id="soundBtn" style="position:fixed; bottom:20px; right:20px; padding:12px 20px; font-size:16px; z-index:10; cursor:pointer;">
+  🍩🥺 Tap for donuts
+</button>
+
+<script>
   const vid = document.getElementById('vid');
-  const unmuteOnInteract = () => {
+  const btn = document.getElementById('soundBtn');
+  btn.addEventListener('click', () => {
     vid.muted = false;
-    document.removeEventListener('click', unmuteOnInteract);
-    document.removeEventListener('scroll', unmuteOnInteract);
-    document.removeEventListener('keydown', unmuteOnInteract);
-  };
-  document.addEventListener('click', unmuteOnInteract);
-  document.addEventListener('scroll', unmuteOnInteract);
-  document.addEventListener('keydown', unmuteOnInteract);
-    </script>
+    btn.textContent = 'cutie patootie';
+    setTimeout(() => btn.remove(), 1500);
+  });
+</script>
   </body>
 </html>
