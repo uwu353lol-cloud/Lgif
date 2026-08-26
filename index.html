@@ -1,20 +1,73 @@
 <!DOCTYPE html>
 <html>
-  <head> <link rel="stylesheet" href="style.css"> </head>
-  <body>
-  <style>
-  body { margin: 0; background: black; }
-  video { width: 100vw; height: 100vh; object-fit: contain; display: block; }
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    overflow: hidden;
+    background: linear-gradient(160deg, #ff9a3c 0%, #ff6b35 45%, #c93b1c 100%);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  video {
+    max-width: 100vw;
+    max-height: 100vh;
+    object-fit: contain;
+    display: block;
+  }
+
   #playBtn {
-    position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
-    font-size: 60px; background: none; border: none; color: white;
-    cursor: pointer; z-index: 10;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    background: rgba(0,0,0,0.3);
+    border: none;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  #caption {
+    position: fixed;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    -webkit-text-stroke: 1.5px #d94f00;
+    font-family: 'Baloo 2', cursive, sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    text-align: center;
+    text-shadow: 3px 3px 0px #d94f00, 0 4px 12px rgba(0,0,0,0.25);
+    z-index: 10;
+    width: 92%;
+    line-height: 1.3;
+    animation: pop 0.5s ease-out;
+  }
+
+  @keyframes pop {
+    0% { transform: translateX(-50%) scale(0.7); opacity: 0; }
+    100% { transform: translateX(-50%) scale(1); opacity: 1; }
   }
 </style>
+</head>
+<body>
 
-<video id="vid" loop playsinline style="width:100vw; height:100vh; object-fit:contain;">
-  <source src="lando-donut.mp4" type="video/mp4">
-</video>
-<button id="playBtn" onclick="document.getElementById('vid').play(); this.remove();">▶</button>
-  </body>
+  <div id="caption">live love laugh white men 🤑<br>(my bebeh🥺❤)</div>
+
+  <video id="vid" loop playsinline>
+    <source src="lando-donuts.mp4" type="video/mp4">
+  </video>
+  <button id="playBtn" onclick="document.getElementById('vid').play(); this.remove();">▶</button>
+
+</body>
 </html>
