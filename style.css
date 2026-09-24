@@ -1,8 +1,10 @@
 .video-container {
   display: flex;
-  justify-content: center; /* Centers horizontally */
-  align-items: center;     /* Centers vertically */
-  min-height: 100vh;       /* Optional: Makes container full screen height */
+  justify-content: center; 
+  align-items: center;     
+  min-height: 100vh;       
+  transform: scale(1.5); 
+  transform-origin: center;
 }
    
 .viga-regular {
